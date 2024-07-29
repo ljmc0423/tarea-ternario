@@ -1,0 +1,44 @@
+import java.util.Scanner;
+/**
+ *
+ * @author ljmc2
+ */
+public class Matta_Lorenzo_P1TareaTernario {
+    public static void main(String[] args) {
+        Scanner lea=new Scanner(System.in).useDelimiter("\n");
+        String opcion="";
+        do{
+            System.out.println("1. Constante"
+                    +          "\n2. Variables"
+                    +          "\n3. Fórmulas");
+            opcion=lea.next();
+        }while(!opcion.equals("1")&&!opcion.equals("2")&&!opcion.equals("3"));
+        switch(opcion){
+            case"1"://constante
+                int num=2;
+                System.out.println("Valor constante: "+num);
+                String out=(num>=3)?"Es mayor o igual a 3":"Es menor a tres";
+
+                System.out.println(out);
+                break;
+            case"2"://variable
+                System.out.println("Ingresar número:");
+                double num2=lea.nextDouble();
+
+                out=(num2>=3)?"Es mayor o igual a 3":"Es menor a tres";
+
+                System.out.println(out);
+                break;
+            case"3"://fórmula
+                System.out.println("Fórmula utilizando ternario: res=(num1>num2) ? (num1+num2):(num1-num2)");
+                System.out.println("Ingresar num1:");
+                double num1=lea.nextDouble();
+                System.out.println("Ingresar num2:");
+                num2=lea.nextDouble();
+
+                double resultado=(num1>num2) ? (num1+num2):(num1-num2);
+                System.out.println("Resultado: "+resultado);
+                break;
+        }
+    }
+}
